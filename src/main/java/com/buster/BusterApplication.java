@@ -8,7 +8,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 
 @SpringBootApplication
 @EnableScheduling
-@EntityScan(basePackageClasses = { Buster.class, Jsr310JpaConverters.class })
+@EntityScan(basePackageClasses = {Buster.class, Jsr310JpaConverters.class})
 public class BusterApplication {
 
     public static void main(String[] args) {

@@ -1,6 +1,8 @@
 package com.buster.model;
 
 import lombok.*;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 import javax.persistence.*;
 import java.util.List;
@@ -16,6 +18,7 @@ public class OneEntity {
     @Column
     private Integer oneEntityId;
 
-    @OneToMany(mappedBy = "oneEntity", fetch = FetchType.EAGER)
+    @Fetch(value = FetchMode.JOIN)
+    @OneToMany(mappedBy = "oneEntity", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<ManyEntity> manyEntities;
 }
